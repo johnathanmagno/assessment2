@@ -31,7 +31,14 @@
 */
 
 //CODE HERE
-
+let pizza = {
+    name: 'paapi johns',
+    price: 50,
+    category: 'entree',
+    popularity: 4.5,
+    rating: 3,
+    tags: ['gluten-free','kids','big boys']
+}
 
 
 //////////////////PROBLEM 2////////////////////
@@ -43,7 +50,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.popularity);
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +60,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.tags[1]);
 
 /*
     Third, destructure the price off of the
@@ -64,7 +71,8 @@
 
 //CODE HERE
 
-
+let {price: pizzaPrice} = pizza
+console.log(pizzaPrice)
 /*
     Fourth, and last, destructure the category
     property.
@@ -73,7 +81,8 @@
 */
 
 //CODE HERE
-
+let {category: pizzaCategory} = pizza
+console.log(pizzaCategory)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -88,7 +97,48 @@
 */
 
 //CODE HERE
-
+let foodArr = [
+    {
+        name: 'chicken finger',
+        price: 8,
+        category: 'finger food',
+        popularity: 2,
+        rating: 5,
+        tags: ['fried','grilled']
+    },
+    {
+        name: 'macaroni',
+        price: 5,
+        category: 'smooshy',
+        popularity: 2,
+        rating: 1,
+        tags: ['undercooked', 'bad']
+    },
+    {
+        name: 'bunless hotdog',
+        price: 1,
+        category: 'meat stick',
+        popularity: 3,
+        rating: 2,
+        tags: ['weird','delicious','easy']
+    },
+    {
+        name: 'twinkies',
+        price: 4.99,
+        category: 'store bought',
+        popularity: 5,
+        rating: 5,
+        tags: ['delicious','easy to make','fat']
+    },
+    {
+        name: 'pork',
+        price: 32,
+        category: 'meat',
+        popularity: 3,
+        rating: 4,
+        tags: ['rind','tough','rough']
+    }
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -106,7 +156,8 @@
 //CODE HERE
 
 // const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
+let foodSearch = foodArr.filter((food) => food.tags.includes('delicious'));
+console.log(foodSearch)
 
 
 //////////////////PROBLEM 5////////////////////
@@ -149,7 +200,7 @@
 */
 
 //CODE HERE
-
+//idk how to do this going to revisit tomorrow
 
 /*
     Invoke the `filterByProperty` function passing
