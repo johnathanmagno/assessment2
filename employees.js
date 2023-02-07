@@ -20,7 +20,15 @@
 */
 
 //CODE HERE
-
+class Employee {
+    constructor(name, shift) {
+        this.name = name;
+        this.shift = shift;
+        this.getSchedule = function(){
+            console.log(`${name} works on ${shift}`)
+        }
+    }
+}
 
 
 /*
@@ -34,6 +42,7 @@
 */
 
 //CODE HERE
+let empOne = new Employee('Johnny','tuesday, thursday, and saturday during dev classes')
 
 /*
     Call the `getSchedule` method on the
@@ -41,7 +50,7 @@
 */
 
 //CODE HERE
-
+empOne.getSchedule()
 
 /*
     Make a copy of the empOne object
@@ -56,7 +65,9 @@
 */
 
 //CODE HERE
-
+let empTwo = {...empOne}
+empTwo.name = 'Nick'
+console.log(empTwo)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -83,7 +94,19 @@
 */
 
 //CODE HERE
+class Manager extends Employee {
+    constructor(name, shifts, employees){
+        super(name, shifts)
 
+        this.employees = employees;
+        this.getEmployees = function(){
+            console.log(`${name} manages ${employees}`)
+        }
+        this.addEmployee = function(emp){
+            employees.push(emp);
+        }
+    }
+}
 
 
 /*
@@ -98,7 +121,7 @@
 */
 
 //CODE HERE
-
+let manager = new Manager('Winston', 'weekday mornings, weekday afternoons', ['Cece', 'Schmidt'])
 
 /*
     Call the `getEmployees` method on the
@@ -106,6 +129,7 @@
 */
 
 //CODE HERE
+manager.getEmployees()
 
 /*
     Call the `addEmployee` method on the 
@@ -114,6 +138,7 @@
 */
 
 //CODE HERE 
+manager.addEmployee('Donny')
 
 /*
     Call the `getEmployees` method on the
@@ -122,3 +147,4 @@
 */
 
 //CODE HERE
+manager.getEmployees()
