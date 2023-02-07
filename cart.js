@@ -34,8 +34,8 @@ const cart = [
 ]
 
 //CODE HERE
-
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+let summedPrice = cart.reduce((total, value) => total + value.price, 0)
+console.log(summedPrice)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -54,7 +54,11 @@ const cart = [
 */
 
 //CODE HERE
-
+let calcFinalPrice = (cartTotal, couponValue, tax) => {
+    total = cartTotal - couponValue + (cartTotal * tax)
+    return Math.round(total * 100) / 100
+}
+console.log(calcFinalPrice(summedPrice, 10, .06))
 
 
 //////////////////PROBLEM 3////////////////////
@@ -79,6 +83,17 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+    ONLINE DELIVERY/PICKUP SYSTEM:
+
+    fullName (this is so we know who's picking up the order) string
+    phoneNumber (for order confirmation) number
+    item(s) (For what they want) string
+    delivery (boolean for delivery/pickup) boolean
+    address (Optional for delivery) string
+    cardName () string
+    cardNum () number
+    cvv () number
+
 
 */
 
@@ -88,3 +103,13 @@ const cart = [
 */
 
 //CODE HERE
+let customer = {
+    fullName: 'Johnny Magno',
+    phoneNumber: 9407835276, //text me if you read this ;)
+    item: 'pizza',
+    delivery: true,
+    address: '2853 Meadowbrook Dr',
+    cardName: 'Johnathan Magno',
+    cardNum: 1234567812345678,
+    cvv: 123
+}
